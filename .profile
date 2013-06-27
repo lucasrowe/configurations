@@ -7,8 +7,12 @@ alias gitbuzz='cd ~/Documents/projects/buzzwords; git status'
 alias gitphrase='cd ~/Documents/projects/phrasecraze; git status'
 alias workspace='cd ~/Documents/workspace'
 
-# Increase History size
+# History
+## Increase History size
+HISTSIZE=1000
 HISTFILESIZE=2500
+# Append hist file (don't overwrite it)
+shopt -s histappend
 
 # Environment Variables
 export CLICOLOR=1
@@ -23,7 +27,8 @@ YELLOW="\[\033[0;33m\]"
 BLUE="\[\033[0;34m\]"
 NO_COLOUR="\[\033[0m\]"
 
-# Set git autocompletion and PS1 integration
+# Git Configs
+## Set git autocompletion and PS1 integration
 if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
   . /usr/local/git/contrib/completion/git-completion.bash
 fi
@@ -32,5 +37,5 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
-# Now colorize my prompt
+## Now colorize my prompt
 PS1="$GREEN\u@machine$BLUE:\w$RED\$(__git_ps1)$NO_COLOUR\$ "
