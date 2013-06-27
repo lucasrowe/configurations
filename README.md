@@ -19,4 +19,6 @@ So for example, to link your home profile to this repo's profile, you'd run this
 
 ## List of Configs
 
-**.profile** configs for my mac profile including colorizing and git setup
+**.profile** Mac configs including colorizing and git setup
+
+**.bashrc** Ubuntu configs including colorizing and other nicities copied from other places
