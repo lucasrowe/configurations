@@ -3,8 +3,8 @@ alias e='emacs'
 alias py='python'
 alias ll='ls -trla'
 alias sub='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
-alias gitbuzz='cd ~/Documents/projects/buzzwords; git status'
-alias gitphrase='cd ~/Documents/projects/phrasecraze; git status'
+alias gitbuzz='cd ~/Documents/projects/siramix/buzzwords; git status'
+alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
 alias workspace='cd ~/Documents/workspace'
 
 # History
