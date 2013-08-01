@@ -8,17 +8,33 @@ configuration file in this repo. I'll do my best to document whenver I add
 a new file what I use it for.
 
 ## Creating Symbolic Link
-In case this is new to you, this is how you create a symbolic link.
+In case this is new to you, this command will create a symbolic link.
 
-    ln -s PATH_TO_CONFIGURATION_FILE LOCATION_OF_NEEDED_CONFIG
+    ln -s CONFIG_FILE_IN_REPO PATH_TO_SOURCE_CONFIG_FILE
 
-So for example, to link your home profile to this repo's profile, you'd run this:
+So for example, to link your home profile to a profile in this repo, you'd run this:
 
     cd
     ln -s ~/projects/configurations/.profile ~/.profile
 
 ## List of Configs
 
-**.profile** Mac configs including colorizing and git setup
+#### OS User Configs
 
-**.bashrc** Ubuntu configs including colorizing and other nicities copied from other places
+> **.profile** Mac configs including colorizing and git setup
+
+> **.bashrc** Ubuntu configs including colorizing and other nicities copied from other places
+
+#### Sublime Text Configs
+
+> Install the following packages (largely based on [SublimeText2 Love](http://kennethreitz.org/sublime-text-2-love/))
+* Package Control
+* Theme - Soda (Dark)
+* SublimeCodeIntel
+* SublimeLinter
+* Markdown Preview
+* sublemacspro
+
+> **sublimetext/Default (OSX).sublime-keymap** User Key Bindings
+
+> **sublimetext/Preferences.sublime-settings** User Preferences with following packages

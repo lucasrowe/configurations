@@ -17,8 +17,8 @@ shopt -s histappend
 # Environment Variables
 export CLICOLOR=1
 export PATH=${PATH}:/Library/android-sdk-mac_x86/
-#export PATH=${PATH}:/Library/android-sdk-mac_x86/platform-tools/
-#export PATH=${PATH}:/Library/android-sdk-mac_x86/tools/
+export PATH=${PATH}:/Library/android-sdk-mac_x86/platform-tools/
+export PATH=${PATH}:/Library/android-sdk-mac_x86/tools/
 
 # Colors for my prompt!
 RED="\[\033[0;31m\]"
