@@ -1,1 +1,10 @@
-/Users/lucas/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap
+[
+    // Lucas custom for emacs
+    { "keys": ["alt+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
+    { "keys": ["alt+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+    { "keys": ["alt+d"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
+
+    // SublCodeIntel Command Overrides
+    { "keys": ["ctrl+]"], "command": "goto_python_definition"},
+    { "keys": ["ctrl+["], "command": "back_to_python_definition"}
+]

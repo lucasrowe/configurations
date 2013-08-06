@@ -8,9 +8,10 @@ configuration file in this repo. I'll do my best to document whenver I add
 a new file what I use it for.
 
 ## Creating Symbolic Link
-In case this is new to you, this command will create a symbolic link.
+In case this is new to you, this command will create a symbolic link at
+a specified location.
 
-    ln -s CONFIG_FILE_IN_REPO PATH_TO_SOURCE_CONFIG_FILE
+    ln -s CONFIG_FILE_IN_REPO NEW_SYMLINK_LOCATION
 
 So for example, to link your home profile to a profile in this repo, you'd run this:
 
