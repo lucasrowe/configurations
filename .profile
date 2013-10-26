@@ -5,6 +5,7 @@ alias ll='ls -trla'
 alias sub='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
 alias gitbuzz='cd ~/Documents/projects/siramix/buzzwords; git status'
 alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
+alias redblue='cd ~/Documents/projects/redblue'
 alias workspace='cd ~/Documents/workspace'
 
 # History
