@@ -17,9 +17,22 @@ shopt -s histappend
 
 # Environment Variables
 export CLICOLOR=1
-export PATH=${PATH}:/Library/android-sdk-mac_x86/
-export PATH=${PATH}:/Library/android-sdk-mac_x86/platform-tools/
+## Java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
+## Maven
+export M3_HOME=/usr/local/Cellar/maven/3.1.1
+## Android
+export ANDROID_HOME=/Library/android-sdk-mac_x86
+export ANDROID_SDK=${ANDROID_HOME}
+export ANDROID_TOOLS=${ANDROID_HOME}/tools
+
+# Path
+export PATH=${PATH}:${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_TOOLS}
 export PATH=${PATH}:/Library/android-sdk-mac_x86/tools/
+export PATH=${PATH}:/usr/local/apache-ant/bin
+export PATH=${PATH}:/usr/local/bin/maven
+export PATH=${PATH}:${M3_HOME}/bin
 
 # Colors for my prompt!
 RED="\[\033[0;31m\]"
