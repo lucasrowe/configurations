@@ -29,7 +29,7 @@ export ANDROID_TOOLS=${ANDROID_HOME}/tools
 # Path
 export PATH=${PATH}:${ANDROID_SDK}
 export PATH=${PATH}:${ANDROID_TOOLS}
-export PATH=${PATH}:/Library/android-sdk-mac_x86/platform-tools/
+export PATH=${PATH}:/Library/android-sdk-mac_x86/platform-tools
 export PATH=${PATH}:/usr/local/apache-ant/bin
 export PATH=${PATH}:/usr/local/bin/maven
 export PATH=${PATH}:${M3_HOME}/bin
