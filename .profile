@@ -2,7 +2,7 @@
 alias e='emacs'
 alias py='python'
 alias ll='ls -trla'
-alias sub='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
+alias sub='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 alias gitbuzz='cd ~/Documents/projects/siramix/buzzwords; git status'
 alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
 alias redblue='cd ~/Documents/projects/redblue'
@@ -43,8 +43,10 @@ NO_COLOUR="\[\033[0m\]"
 
 # Git Configs
 ## Set git autocompletion and PS1 integration
-if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
-  . /usr/local/git/contrib/completion/git-completion.bash
+# brew install git bash-completion
+# https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 if [ -f /opt/local/etc/bash_completion ]; then
