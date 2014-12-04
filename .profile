@@ -3,8 +3,8 @@ alias e='emacs'
 alias py='python'
 alias ll='ls -trla'
 alias sub='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
-alias gitbuzz='cd ~/Documents/projects/siramix/buzzwords; git status'
-alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
+#alias gitbuzz='cd ~/Documents/projects/siramix/buzzwords; git status'
+#alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
 alias redblue='cd ~/Documents/projects/redblue'
 alias workspace='cd ~/Documents/workspace'
 
@@ -30,9 +30,9 @@ export ANDROID_TOOLS=${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_SDK}
 export PATH=${PATH}:${ANDROID_TOOLS}
 export PATH=${PATH}:/Library/android-sdk-mac_x86/platform-tools
-export PATH=${PATH}:/usr/local/apache-ant/bin
-export PATH=${PATH}:/usr/local/bin/maven
-export PATH=${PATH}:${M3_HOME}/bin
+#export PATH=${PATH}:/usr/local/apache-ant/bin
+#export PATH=${PATH}:/usr/local/bin/maven
+#export PATH=${PATH}:${M3_HOME}/bin
 
 # Colors for my prompt!
 RED="\[\033[0;31m\]"
