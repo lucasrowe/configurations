@@ -18,7 +18,7 @@ shopt -s histappend
 
 # Environment Variables
 export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+#export LSCOLORS=GxFxCxDxBxegedabagaced
 export SVN_EDITOR=vim
 ## Java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
@@ -43,6 +43,7 @@ GREEN="\[\033[0;32m\]"
 YELLOW="\[\033[0;33m\]"
 BLUE="\[\033[0;34m\]"
 MAGENTA="\[\033[0;35m\]"
+CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
 # Git Configs
@@ -58,4 +59,4 @@ if [ -f /opt/local/etc/bash_completion ]; then
 fi
 
 ## Now colorize my prompt
-PS1="$GREEN\u@machine$MAGENTA:\w$RED\$(__git_ps1)$NO_COLOUR\$ "
+PS1="$GREEN\u@machine$CYAN:\w$RED\$(__git_ps1)$NO_COLOUR\$ "
