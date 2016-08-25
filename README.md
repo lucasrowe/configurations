@@ -18,9 +18,15 @@ So for example, to link your home profile to a profile in this repo, you'd run t
     cd
     ln -s ~/projects/configurations/.profile ~/.profile
 
-To add a new configuration to this repo, move the config file into the repo and use
+To import a new configuration to this repo, move the config file into the repo and use
 the above command to make a symlink where the config file used to be that points
 to the file now in the repository.
+
+
+    mv ~/.profile ~/projects/configurations/.profile
+    ln -s ~/projects/configurations/.profile ~/.profile
+
+
 
 ## List of Configs
 
