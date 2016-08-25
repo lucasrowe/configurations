@@ -33,6 +33,7 @@ export ANDROID_TOOLS=${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_SDK}
 export PATH=${PATH}:${ANDROID_TOOLS}
 export PATH=${PATH}:/Library/android-sdk-macosx/platform-tools
+#export PATH=${PATH}:/Applications/Postgres.app/Contents/Versions/latest/bin
 #export PATH=${PATH}:/usr/local/apache-ant/bin
 #export PATH=${PATH}:/usr/local/bin/maven
 #export PATH=${PATH}:${M3_HOME}/bin
