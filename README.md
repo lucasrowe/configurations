@@ -48,4 +48,6 @@ to the file now in the repository.
 
 > **sublimetext/Preferences.sublime-settings** User Preferences with following packages
 
+#### Vim Configs
+
 > **.vimrc** Vim settings (Color Schemes will need to be downloaded separately)
