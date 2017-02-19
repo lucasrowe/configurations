@@ -4,12 +4,10 @@ Configurations
 Configuration files for all my workstations including IDE settings.
 
 Whenever using one of these configs just create a symbolic link to the appropriate
-configuration file in this repo. I'll do my best to document whenver I add
-a new file what I use it for.
+configuration file in this repo. I'll do my best to document the purpose of config files.
 
 ## Creating Symbolic Link
-In case this is new to you, this command will create a symbolic link at
-a specified location.
+This command will create a symbolic link at a specified location.
 
     ln -s CONFIG_FILE_IN_REPO NEW_SYMLINK_LOCATION
 
