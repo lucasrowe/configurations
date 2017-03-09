@@ -36,7 +36,7 @@ to the file now in the repository.
 
 #### Sublime Text Configs
 
-> Install the following packages (largely based on [SublimeText2 Love](http://kennethreitz.org/sublime-text-2-love/))
+> I Install the following packages (largely based on [SublimeText2 Love](http://kennethreitz.org/sublime-text-2-love/))
 * Package Control
 * Theme - Soda (Dark)
 * SublimeCodeIntel
