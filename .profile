@@ -5,16 +5,15 @@ alias ll='ls -trla'
 alias sub='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 #alias gitbuzz='cd ~/Documents/projects/siramix/buzzwords; git status'
 #alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
-alias redblue='cd ~/Documents/projects/redblue'
-alias workspace='cd ~/Documents/workspace'
-alias jarcas='cd ~/Documents/projects/jarcas'
+alias redblue='cd ~/Projects/redbluegames'
+alias personal='cd ~/Projects/personal'
 
 # History
 ## Increase History size
 HISTSIZE=1000
 HISTFILESIZE=2500
 # Append hist file (don't overwrite it)
-shopt -s histappend
+# shopt -s histappend
 
 # Environment Variables
 export CLICOLOR=1

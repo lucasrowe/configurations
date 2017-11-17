@@ -34,6 +34,8 @@ to the file now in the repository.
 
 > **.bashrc** Ubuntu configs including colorizing and other nicities copied from other places
 
+> **.zshrc** A new shell I'm experimenting with
+
 #### Sublime Text Configs
 
 > I Install the following packages (largely based on [SublimeText2 Love](http://kennethreitz.org/sublime-text-2-love/))
@@ -51,3 +53,5 @@ to the file now in the repository.
 #### Vim Configs
 
 > **.vimrc** Vim settings (Color Schemes will need to be downloaded separately)
+
+> Download and install .vim color schemes into ~/.vim/colors
