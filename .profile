@@ -7,6 +7,7 @@ alias sub='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 #alias gitphrase='cd ~/Documents/projects/siramix/phrasecraze; git status'
 alias redblue='cd ~/Projects/redbluegames'
 alias personal='cd ~/Projects/personal'
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
 
 # History
 ## Increase History size
@@ -22,6 +23,8 @@ if which ruby >/dev/null && which gem >/dev/null; then
     export GEM_HOME=~/.gem
     export PATH=${PATH}:${GEM_PATH}/bin
 fi
+
+export PATH=${PATH}:/Users/lucasrowe/Library/Python/2.7/bin
 
 # Subversion
 export SVN_EDITOR=vim
