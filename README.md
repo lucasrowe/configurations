@@ -28,6 +28,12 @@ to the file now in the repository.
 
 ## List of Configs
 
+#### Karabiner Elements
+
+This progrm lets me use right option as a special "super' key. Useful to unique hotkeys that won't interfere with other programs.
+
+> **karabiner.json** should link to .configs/karabiner/karabiner.json
+
 #### OS User Configs
 
 > **.profile** Mac configs including colorizing and git setup
