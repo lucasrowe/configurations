@@ -1,8 +1,18 @@
-# Mac ignore
+# macOS
 .DS_Store
-*.swp
+.AppleDouble
+.LSOverride
 *.Trashes
 
-# Sublime
-*.sublime-project
-*.sublime-workspace
+# Editor state
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Environment / secrets
+.env
+.env.local
+*.pem
+*.key

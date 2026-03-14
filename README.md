@@ -1,63 +1,36 @@
-Configurations
-==============
+# Lucas Rowe — Machine Configuration
 
-Configuration files for all my workstations including IDE settings.
+Dotfiles and setup automation for macOS. Designed to be executed by an AI assistant or run as a single script.
 
-Whenever using one of these configs just create a symbolic link to the appropriate
-configuration file in this repo. I'll do my best to document the purpose of config files.
+## Quick Start
 
-## Creating Symbolic Link
-This command will create a symbolic link at a specified location.
+**Tell an AI assistant:** "Set up my computer using the instructions in this repo" — then point it at [`SETUP.md`](SETUP.md).
 
-    ln -s CONFIG_FILE_IN_REPO NEW_SYMLINK_LOCATION
+**Or run the script directly:**
 
-So for example, to link your home profile to a profile in this repo, you'd run this:
+```bash
+git clone https://github.com/lucasrowe/configurations.git ~/projects/configurations
+cd ~/projects/configurations
+chmod +x setup.sh
+./setup.sh
+```
 
-    cd
-    ln -s ~/projects/configurations/.profile ~/.profile
+## What's Included
 
-To import a new configuration to this repo, move the config file into the repo and use
-the above command to make a symlink where the config file used to be that points
-to the file now in the repository.
+| File | Purpose |
+|---|---|
+| `SETUP.md` | Step-by-step setup instructions (AI-optimized) |
+| `setup.sh` | Automated setup script (runs all steps) |
+| `Brewfile` | All Homebrew packages and cask apps |
+| `.zshrc` | Zsh config (Oh My Zsh, aliases, nvm, pyenv) |
+| `.gitconfig` | Git aliases, delta diff, LFS (no email stored) |
+| `karabiner.json` | Keyboard customization (Hyper key, Emacs bindings) |
+| `macos-defaults.sh` | macOS system preferences (Finder, Dock, keyboard) |
 
+## Design Principles
 
-    mv ~/.profile ~/projects/configurations/.profile
-    ln -s ~/projects/configurations/.profile ~/.profile
-
-
-
-## List of Configs
-
-#### Karabiner Elements
-
-This progrm lets me use right option as a special "super' key. Useful to unique hotkeys that won't interfere with other programs.
-
-> **karabiner.json** should link to .configs/karabiner/karabiner.json
-
-#### OS User Configs
-
-> **.profile** Mac configs including colorizing and git setup
-
-> **.bashrc** Ubuntu configs including colorizing and other nicities copied from other places
-
-> **.zshrc** A new shell I'm experimenting with
-
-#### Sublime Text Configs
-
-> I Install the following packages (largely based on [SublimeText2 Love](http://kennethreitz.org/sublime-text-2-love/))
-* Package Control
-* Theme - Soda (Dark)
-* SublimeCodeIntel
-* SublimeLinter
-* Markdown Preview
-* sublemacspro
-
-> **sublimetext/Default (OSX).sublime-keymap** User Key Bindings
-
-> **sublimetext/Preferences.sublime-settings** User Preferences with following packages
-
-#### Vim Configs
-
-> **.vimrc** Vim settings (Color Schemes will need to be downloaded separately)
-
-> Download and install .vim color schemes into ~/.vim/colors
+- **No secrets in the repo.** Git email is set at setup time, not stored in files.
+- **Idempotent.** Safe to re-run `setup.sh` on an already-configured machine.
+- **Portable.** Uses `$HOME` instead of hardcoded paths. Works on any Mac username.
+- **AI-readable.** `SETUP.md` is structured so Claude or any LLM can follow it step by step.
+- **IDE-agnostic.** IDE choice is deferred to setup time — install VS Code, Cursor, Zed, or skip entirely.

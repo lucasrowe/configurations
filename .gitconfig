@@ -1,16 +1,52 @@
-[user]
-  name = Lucas Rowe
-	email = lucas.rowe@redbluegames.com
+# =============================================================================
+# Git Configuration — Lucas Rowe
+# NOTE: user.name and user.email are set during setup (not stored in repo)
+# =============================================================================
+
 [push]
   default = simple
-# Added by git lfs install
+  autoSetupRemote = true
+
+[pull]
+  rebase = true
+
+[init]
+  defaultBranch = main
+
+[core]
+  editor = code -w
+  autocrlf = input
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  line-numbers = true
+  side-by-side = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
 [alias]
-  # Clean merged branches
-  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
-  # one-line log
-  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+  # Status & log
+  s = status -s
+  st = status -s
+  l = log --pretty=format:\"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate --date=short
+  ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate --numstat
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+  # Branching
+  co = checkout
+  cob = checkout -b
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+  cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+
+  # Committing
   a = add
   ap = add -p
   c = commit --verbose
@@ -18,36 +54,26 @@
   cm = commit -m
   cam = commit -a -m
   m = commit --amend --verbose
+
+  # Diffing
   d = diff
   ds = diff --stat
   dc = diff --cached
 
-  # From Github Flow Aliases http://haacked.com/archive/2014/07/28/github-flow-aliases/
-  s = status -s
-  st = status -s
-  co = checkout
-  cob = checkout -b
-  ec = config --global -e
+  # Syncing
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  ec = config --global -e
 
-
-  # list branches sorted by last modified
-  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
-
-  # list aliases
+  # Info
   la = "!git config -l | grep alias | cut -c 7-"
-
-  # From Git Housekeeping Tutorial http://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/
-  # Info on remote merged branches
   rmerged = "!for branch in `git branch -r --merged | grep -v HEAD`; do echo `git show --format=\"%ci %cr %an\" $branch | head -n 1` \\t$branch; done | sort -r"
-  # Info on remote unmerged branches
   runmerged = "!for branch in `git branch -r --no-merged | grep -v HEAD`; do echo `git show --format=\"%ci %cr %an\" $branch | head -n 1` \\t$branch; done | sort -r"
+
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
+
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-[core]
-	editor = code -w
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
