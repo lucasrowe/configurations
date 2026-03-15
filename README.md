@@ -9,8 +9,8 @@ Dotfiles and setup automation for macOS. Designed to be executed by an AI assist
 **Or run the script directly:**
 
 ```bash
-git clone https://github.com/lucasrowe/configurations.git ~/projects/configurations
-cd ~/projects/configurations
+git clone git@github.com:lucasrowe/configurations.git ~/projects/lucasrowe/configurations
+cd ~/projects/lucasrowe/configurations
 chmod +x setup.sh
 ./setup.sh
 ```

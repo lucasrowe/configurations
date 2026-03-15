@@ -8,7 +8,7 @@
 
 - macOS (Apple Silicon assumed)
 - Logged into the Mac App Store
-- This repo cloned to `~/projects/configurations`
+- This repo cloned to `~/projects/lucasrowe/configurations`
 
 ## 0. Gather Credentials (One-Time Prompts)
 
@@ -45,7 +45,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ## 2. Install All Packages and Apps via Brewfile
 
 ```bash
-brew bundle --file=~/projects/configurations/Brewfile
+brew bundle --file=~/projects/lucasrowe/configurations/Brewfile
 ```
 
 This installs CLI tools, fonts, and GUI apps. See `Brewfile` for the full manifest.
@@ -76,7 +76,7 @@ GIT_NAME=$(git config --global user.name)
 GIT_EMAIL=$(git config --global user.email)
 
 # Link the gitconfig from this repo
-ln -sf ~/projects/configurations/.gitconfig ~/.gitconfig
+ln -sf ~/projects/lucasrowe/configurations/.gitconfig ~/.gitconfig
 
 # Re-apply identity (since the symlinked file doesn't include them)
 git config --global user.name "$GIT_NAME"
@@ -103,7 +103,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ### Symlink .zshrc
 
 ```bash
-ln -sf ~/projects/configurations/.zshrc ~/.zshrc
+ln -sf ~/projects/lucasrowe/configurations/.zshrc ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -152,7 +152,7 @@ claude --version
 
 ```bash
 mkdir -p ~/.config/karabiner
-ln -sf ~/projects/configurations/karabiner.json ~/.config/karabiner/karabiner.json
+ln -sf ~/projects/lucasrowe/configurations/karabiner.json ~/.config/karabiner/karabiner.json
 ```
 
 This sets up:
@@ -167,8 +167,8 @@ This sets up:
 ## 9. Apply macOS System Preferences
 
 ```bash
-chmod +x ~/projects/configurations/macos-defaults.sh
-~/projects/configurations/macos-defaults.sh
+chmod +x ~/projects/lucasrowe/configurations/macos-defaults.sh
+~/projects/lucasrowe/configurations/macos-defaults.sh
 ```
 
 This configures Finder, Dock, keyboard, trackpad, and other system settings.

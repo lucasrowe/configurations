@@ -52,7 +52,7 @@ fi
 echo ""
 echo "=== Step 2: Installing packages and apps ==="
 
-brew bundle --file="$CONFIGS_DIR/Brewfile" --no-lock
+brew bundle --file="$CONFIGS_DIR/Brewfile"
 
 # IDE — ask user
 echo ""
@@ -195,10 +195,10 @@ echo "✅ Setup complete!"
 echo "============================================"
 echo ""
 echo "Manual steps remaining:"
-echo "  1. Sign into apps: 1Password, Slack, Figma, Arc, Notion"
-echo "  2. Set up SSH keys (generate or restore from 1Password)"
-echo "  3. Add SSH key to GitHub: gh ssh-key add ~/.ssh/id_ed25519.pub"
-echo "  4. Authenticate GitHub CLI: gh auth login"
+echo "  1. Sign into apps: 1Password, Slack, Figma, Arc"
+echo "  2. Set up SSH keys if not already done: gh auth login (select SSH)"
+echo "  3. Set terminal font: iTerm2 → Settings → Profiles → Text → Font → FiraCode Nerd Font"
+echo "  4. Set default browser: System Settings → Desktop & Dock"
 echo "  5. Restart your terminal to load all changes"
 echo ""
 echo "Verify with:"

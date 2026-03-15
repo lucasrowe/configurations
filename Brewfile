@@ -2,12 +2,6 @@
 # Install everything: brew bundle --file=~/projects/configurations/Brewfile
 
 # ============================================================================
-# Taps
-# ============================================================================
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-
-# ============================================================================
 # CLI Tools — Development
 # ============================================================================
 brew "git"                    # Version control
@@ -34,9 +28,9 @@ brew "starship"               # Cross-shell prompt (optional, see .zshrc)
 # ============================================================================
 # Fonts
 # ============================================================================
-cask "font-fira-code"         # Monospace with ligatures
-cask "font-inter"             # UI/design font
-cask "font-jetbrains-mono"    # Monospace alternative
+cask "font-fira-code-nerd-font"      # Monospace with ligatures + icons
+cask "font-jetbrains-mono-nerd-font" # Monospace alternative + icons
+cask "font-inter"                    # UI/design font
 
 # ============================================================================
 # Apps — Development

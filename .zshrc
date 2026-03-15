@@ -7,7 +7,7 @@
 # Oh My Zsh
 # ---------------------------------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="mh"
+ZSH_THEME=""  # Using Starship instead (initialized at end of file)
 
 plugins=(
   git
@@ -93,3 +93,8 @@ setopt SHARE_HISTORY         # Share history between sessions
 
 # Disable "correct" prompts (annoying for most workflows)
 unsetopt correct_all
+
+# ---------------------------------------------------------------------------
+# Starship prompt (must be last)
+# ---------------------------------------------------------------------------
+eval "$(starship init zsh)"
