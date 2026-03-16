@@ -13,6 +13,7 @@ brew "jq"                     # JSON processor
 brew "ripgrep"                # Fast search (rg)
 brew "fd"                     # Fast find alternative
 brew "fzf"                    # Fuzzy finder
+brew "git-delta"              # Better git diffs
 brew "tree"                   # Directory tree view
 brew "wget"                   # HTTP downloads
 
@@ -56,5 +57,6 @@ cask "karabiner-elements"     # Keyboard customization
 # ============================================================================
 # Apps — Utilities
 # ============================================================================
+cask "appcleaner"             # Clean app uninstaller
 cask "cleanshot"              # Screenshot tool
 cask "qlmarkdown"             # Quick Look preview for Markdown
