@@ -17,7 +17,7 @@ Before running anything, ask the user for:
 1. **Git email address** — will be set via `git config --global user.email`
 2. **Git signing preference** — SSH key signing, GPG, or none
 3. **Which IDE(s) to install** — e.g., VS Code, Cursor, Zed, WebStorm, or none (user is evaluating)
-4. **Optional apps** — Linear (project management)
+4. **Optional apps** — Slack, Figma, Linear, Microsoft Teams
 
 Store answers in environment variables for the duration of setup:
 
@@ -60,11 +60,13 @@ brew install --cask cursor
 brew install --cask zed
 ```
 
-**Optional apps:** Based on the user's preferences from Step 0, also run:
+**Optional apps:** Based on the user's choices from Step 0, install any selected:
 
 ```bash
-# Only install if the user chose it:
+brew install --cask slack
+brew install --cask figma
 brew install --cask linear-linear
+brew install --cask microsoft-teams
 ```
 
 ---
@@ -188,7 +190,7 @@ A restart is recommended after running this.
 
 These steps cannot be automated and require the user to do them manually:
 
-1. **Sign into apps**: 1Password, Slack, Figma, Arc/Chrome, Notion
+1. **Sign into apps**: 1Password, Arc/Chrome, Notion, and any optional apps you installed
 2. **Set up SSH keys**: Generate or restore from 1Password, add to GitHub
 3. **Configure Rectangle/Raycast**: Import settings or set up shortcuts
 4. **Restore IDE settings**: Sign into Settings Sync (VS Code) or equivalent

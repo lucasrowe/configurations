@@ -40,9 +40,12 @@ cask "iterm2"                 # Terminal
 # IDE is installed separately based on user preference (see SETUP.md Step 0)
 
 # ============================================================================
-# Apps — Design
+# Apps — Optional (installed interactively — see setup.sh)
 # ============================================================================
-cask "figma"                  # Design tool
+# cask "slack"                # Team chat
+# cask "figma"                # Design tool
+# cask "linear-linear"        # Project management
+# cask "microsoft-teams"      # Video calls
 
 # ============================================================================
 # Apps — Productivity
@@ -50,7 +53,6 @@ cask "figma"                  # Design tool
 cask "alfred"                 # Launcher / Spotlight replacement
 cask "rectangle"              # Window management
 cask "1password"              # Password manager
-cask "slack"                  # Team chat
 cask "arc"                    # Browser
 cask "karabiner-elements"     # Keyboard customization
 

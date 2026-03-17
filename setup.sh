@@ -74,14 +74,23 @@ done
 
 # Optional apps
 echo ""
-echo "Would you like to install Linear (project management)?"
-echo "  1) Yes"
-echo "  2) No"
-read -p "Enter choice: " LINEAR_CHOICE
+echo "Which optional apps would you like to install?"
+echo "  1) Slack"
+echo "  2) Figma"
+echo "  3) Linear"
+echo "  4) Microsoft Teams"
+echo "  5) None"
+read -p "Enter numbers separated by spaces (e.g., '1 2 3'): " APP_CHOICES
 
-if [ "$LINEAR_CHOICE" = "1" ]; then
-  brew install --cask linear-linear 2>/dev/null || true
-fi
+for choice in $APP_CHOICES; do
+  case $choice in
+    1) brew install --cask slack 2>/dev/null || true ;;
+    2) brew install --cask figma 2>/dev/null || true ;;
+    3) brew install --cask linear-linear 2>/dev/null || true ;;
+    4) brew install --cask microsoft-teams 2>/dev/null || true ;;
+    5) echo "Skipping optional apps." ;;
+  esac
+done
 
 # ---------------------------------------------------------------------------
 # Step 3: Git config
@@ -206,7 +215,7 @@ echo "✅ Setup complete!"
 echo "============================================"
 echo ""
 echo "Manual steps remaining:"
-echo "  1. Sign into apps: 1Password, Slack, Figma, Arc"
+echo "  1. Sign into apps: 1Password, Arc, and any optional apps you installed"
 echo "  2. Set up SSH keys if not already done: gh auth login (select SSH)"
 echo "  3. Set terminal font: iTerm2 → Settings → Profiles → Text → Font → FiraCode Nerd Font"
 echo "  4. Set default browser: System Settings → Desktop & Dock"
