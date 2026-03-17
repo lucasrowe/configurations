@@ -17,6 +17,7 @@ Before running anything, ask the user for:
 1. **Git email address** — will be set via `git config --global user.email`
 2. **Git signing preference** — SSH key signing, GPG, or none
 3. **Which IDE(s) to install** — e.g., VS Code, Cursor, Zed, WebStorm, or none (user is evaluating)
+4. **Optional apps** — Linear (project management)
 
 Store answers in environment variables for the duration of setup:
 
@@ -57,6 +58,13 @@ This installs CLI tools, fonts, and GUI apps. See `Brewfile` for the full manife
 brew install --cask visual-studio-code
 brew install --cask cursor
 brew install --cask zed
+```
+
+**Optional apps:** Based on the user's preferences from Step 0, also run:
+
+```bash
+# Only install if the user chose it:
+brew install --cask linear-linear
 ```
 
 ---

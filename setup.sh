@@ -72,6 +72,17 @@ for choice in $IDE_CHOICES; do
   esac
 done
 
+# Optional apps
+echo ""
+echo "Would you like to install Linear (project management)?"
+echo "  1) Yes"
+echo "  2) No"
+read -p "Enter choice: " LINEAR_CHOICE
+
+if [ "$LINEAR_CHOICE" = "1" ]; then
+  brew install --cask linear-linear 2>/dev/null || true
+fi
+
 # ---------------------------------------------------------------------------
 # Step 3: Git config
 # ---------------------------------------------------------------------------
