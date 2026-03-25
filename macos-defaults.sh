@@ -18,8 +18,8 @@ osascript -e 'tell application "System Preferences" to quit' 2>/dev/null
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Show all file extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Hide .app extensions while keeping other file extensions visible
+defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 
 # Show path bar at the bottom of Finder
 defaults write com.apple.finder ShowPathbar -bool true
