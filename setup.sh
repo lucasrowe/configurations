@@ -207,6 +207,28 @@ if [ -f "$CONFIGS_DIR/macos-defaults.sh" ]; then
 fi
 
 # ---------------------------------------------------------------------------
+# Step 10: Login Items
+# ---------------------------------------------------------------------------
+echo ""
+echo "=== Step 10: Login items ==="
+
+LOGIN_APPS=(
+  "Rectangle"
+  "1Password"
+  "Alfred 5"
+  "CleanShot X"
+)
+
+for app in "${LOGIN_APPS[@]}"; do
+  if [ -d "/Applications/${app}.app" ]; then
+    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"/Applications/${app}.app\", hidden:false}" 2>/dev/null || true
+    echo "${app} added to login items."
+  else
+    echo "${app} not installed — skipping login item."
+  fi
+done
+
+# ---------------------------------------------------------------------------
 # Done
 # ---------------------------------------------------------------------------
 echo ""
