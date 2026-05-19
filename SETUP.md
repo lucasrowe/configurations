@@ -162,7 +162,23 @@ claude --version
 
 ```bash
 mkdir -p ~/.config/karabiner
-ln -sf ~/projects/lucasrowe/configurations/karabiner.json ~/.config/karabiner/karabiner.json
+KARABINER_TARGET=~/.config/karabiner/karabiner.json
+
+# If Karabiner has replaced the symlink with a real file (it does this on save),
+# carry forward the user's virtual_hid_keyboard settings before re-linking so we
+# don't stomp on the keyboard_type choice.
+if [ -f "$KARABINER_TARGET" ] && [ ! -L "$KARABINER_TARGET" ]; then
+  EXISTING_VHK=$(jq -c '.profiles[0].virtual_hid_keyboard // empty' "$KARABINER_TARGET")
+  if [ -n "$EXISTING_VHK" ]; then
+    TMP=$(mktemp)
+    jq --argjson vhk "$EXISTING_VHK" \
+      '.profiles[0].virtual_hid_keyboard = $vhk' \
+      ~/projects/lucasrowe/configurations/karabiner.json > "$TMP" \
+      && mv "$TMP" ~/projects/lucasrowe/configurations/karabiner.json
+  fi
+fi
+
+ln -sf ~/projects/lucasrowe/configurations/karabiner.json "$KARABINER_TARGET"
 ```
 
 This sets up:

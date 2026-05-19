@@ -192,7 +192,23 @@ echo ""
 echo "=== Step 8: Karabiner Elements ==="
 
 mkdir -p ~/.config/karabiner
-ln -sf "$CONFIGS_DIR/karabiner.json" ~/.config/karabiner/karabiner.json
+KARABINER_TARGET=~/.config/karabiner/karabiner.json
+
+# Karabiner replaces the symlink with a real file when it writes. If the user
+# has changed their keyboard_type since the last setup run, carry that choice
+# back into the repo file before re-linking so we don't stomp on it.
+if [ -f "$KARABINER_TARGET" ] && [ ! -L "$KARABINER_TARGET" ]; then
+  EXISTING_VHK=$(jq -c '.profiles[0].virtual_hid_keyboard // empty' "$KARABINER_TARGET" 2>/dev/null)
+  if [ -n "$EXISTING_VHK" ]; then
+    TMP=$(mktemp)
+    jq --argjson vhk "$EXISTING_VHK" \
+      '.profiles[0].virtual_hid_keyboard = $vhk' \
+      "$CONFIGS_DIR/karabiner.json" > "$TMP" && mv "$TMP" "$CONFIGS_DIR/karabiner.json"
+    echo "Preserved existing virtual_hid_keyboard settings into repo."
+  fi
+fi
+
+ln -sf "$CONFIGS_DIR/karabiner.json" "$KARABINER_TARGET"
 echo "Karabiner configured."
 
 # ---------------------------------------------------------------------------
