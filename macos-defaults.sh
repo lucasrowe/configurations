@@ -62,6 +62,13 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock minimize-to-application -bool true
 
 # ---------------------------------------------------------------------------
+# Hot Corners
+# ---------------------------------------------------------------------------
+# Disable bottom-right Quick Note hot corner
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+# ---------------------------------------------------------------------------
 # Keyboard
 # ---------------------------------------------------------------------------
 # Fast key repeat rate
