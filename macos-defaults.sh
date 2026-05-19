@@ -92,9 +92,6 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Enable three-finger drag
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-
 # ---------------------------------------------------------------------------
 # Screenshots
 # ---------------------------------------------------------------------------
