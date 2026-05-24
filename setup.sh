@@ -92,6 +92,13 @@ for choice in $APP_CHOICES; do
   esac
 done
 
+# Activate Quick Look extensions that require launching the app once
+echo "Activating Quick Look extensions..."
+if [ -d /opt/homebrew/Caskroom/qlmarkdown ]; then
+  open /opt/homebrew/Caskroom/qlmarkdown/*/QLMarkdown.app 2>/dev/null || true
+  echo "QLMarkdown launched — enable it in System Settings → General → Login Items & Extensions → Extensions → Quick Look."
+fi
+
 # ---------------------------------------------------------------------------
 # Step 3: Git config
 # ---------------------------------------------------------------------------
