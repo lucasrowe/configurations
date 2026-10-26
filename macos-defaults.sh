@@ -119,6 +119,26 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # ---------------------------------------------------------------------------
+# Google Chrome
+# ---------------------------------------------------------------------------
+# Disable "Warn Before Quitting (⌘Q)" so ⌘Q quits right away.
+# Chrome keeps this in its Local State JSON file, not in a defaults domain, and
+# rewrites that file from memory when it exits — so only edit it while Chrome
+# is closed, or the change is lost.
+CHROME_LOCAL_STATE="$HOME/Library/Application Support/Google/Chrome/Local State"
+if pgrep -x "Google Chrome" >/dev/null 2>&1; then
+  echo "⚠️  Chrome is running — skipped the ⌘Q setting. Quit Chrome and re-run."
+elif [ ! -f "$CHROME_LOCAL_STATE" ]; then
+  echo "⚠️  Chrome has never run — skipped the ⌘Q setting. Open Chrome once and re-run."
+else
+  if ! plutil -replace browser.confirm_to_quit -bool NO "$CHROME_LOCAL_STATE" 2>/dev/null; then
+    # No "browser" object in the file yet — create it, then set the key.
+    plutil -insert browser -json '{}' "$CHROME_LOCAL_STATE" 2>/dev/null
+    plutil -replace browser.confirm_to_quit -bool NO "$CHROME_LOCAL_STATE" 2>/dev/null
+  fi
+fi
+
+# ---------------------------------------------------------------------------
 # Apply changes
 # ---------------------------------------------------------------------------
 echo "Restarting affected apps..."
